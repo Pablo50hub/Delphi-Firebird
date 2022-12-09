@@ -44,10 +44,15 @@ type
     btnConfiguracoes: TSpeedButton;
     btnSair: TSpeedButton;
     procedure btnSairClick(Sender: TObject);
+    procedure btnClientesClick(Sender: TObject);
+    procedure btnCaixaClick(Sender: TObject);
+    procedure btnFornecedoresClick(Sender: TObject);
+    procedure btnProdutosClick(Sender: TObject);
+    procedure btnConfiguracoesClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
-    { Private declarations }
+    procedure GET_LineMenu(Sender: TObject);
   public
-    { Public declarations }
   end;
 
 var
@@ -57,9 +62,48 @@ implementation
 
 {$R *.dfm}
 
+procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
+begin         //caixa
+  GET_LineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnClientesClick(Sender: TObject);
+begin           //clientes
+  GET_LineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnConfiguracoesClick(Sender: TObject);
+begin                  //config
+  GET_LineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnFornecedoresClick(Sender: TObject);
+begin                  //fornecedores
+  GET_LineMenu(Sender);
+end;
+
+procedure TViewPrincipal.btnProdutosClick(Sender: TObject);
+begin                  //produtos
+  GET_LineMenu(Sender);
+end;
+
 procedure TViewPrincipal.btnSairClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TViewPrincipal.FormShow(Sender: TObject);
+begin           //show
+  GET_LineMenu(btnClientes);
+end;
+
+procedure TViewPrincipal.GET_LineMenu(Sender: TObject);
+begin
+  ShapeMenu.Left       := 0;
+  ShapeMenu.Top        := 0;
+  ShapeMenu.Height     := TSpeedButton(Sender).Height;
+  ShapeMenu.Top        := TSpeedButton(Sender).Top;
+  pnlShapeMenu.Repaint;
 end;
 
 end.
