@@ -4,7 +4,7 @@ object ViewPrincipal: TViewPrincipal
   Align = alClient
   BorderStyle = bsNone
   Caption = 'ViewPrincipal'
-  ClientHeight = 580
+  ClientHeight = 532
   ClientWidth = 875
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -2176,6 +2176,7 @@ object ViewPrincipal: TViewPrincipal
           Top = 0
           Width = 204
           Height = 33
+          Cursor = crHandPoint
           Margins.Top = 0
           Margins.Bottom = 0
           Align = alClient
@@ -2186,6 +2187,8 @@ object ViewPrincipal: TViewPrincipal
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
+          OnMouseEnter = lblTituloEmpresaMouseEnter
+          OnMouseLeave = lblTituloEmpresaMouseLeave
           ExplicitWidth = 109
           ExplicitHeight = 32
         end
@@ -2351,17 +2354,16 @@ object ViewPrincipal: TViewPrincipal
     Left = 0
     Top = 70
     Width = 210
-    Height = 510
+    Height = 462
     Align = alLeft
     BevelOuter = bvNone
     Color = 5395026
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = -6
-    ExplicitTop = 73
+    ExplicitHeight = 510
     object pnlSair: TPanel
       Left = 0
-      Top = 469
+      Top = 421
       Width = 210
       Height = 41
       Align = alBottom
@@ -2369,8 +2371,7 @@ object ViewPrincipal: TViewPrincipal
       Color = 4605510
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = -6
-      ExplicitTop = 475
+      ExplicitTop = 469
       object btnSair: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -2397,10 +2398,11 @@ object ViewPrincipal: TViewPrincipal
       Left = 0
       Top = 0
       Width = 4
-      Height = 469
+      Height = 421
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitHeight = 469
       object ShapeMenu: TShape
         Left = 0
         Top = 0
@@ -2412,12 +2414,11 @@ object ViewPrincipal: TViewPrincipal
       Left = 4
       Top = 0
       Width = 206
-      Height = 469
+      Height = 421
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitLeft = -2
-      ExplicitTop = 3
+      ExplicitHeight = 469
       object btnClientes: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -2534,13 +2535,14 @@ object ViewPrincipal: TViewPrincipal
     Left = 210
     Top = 70
     Width = 665
-    Height = 510
+    Height = 462
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
+    ExplicitHeight = 510
     object pnlRodape: TPanel
       Left = 0
-      Top = 469
+      Top = 421
       Width = 665
       Height = 41
       Align = alBottom
@@ -2548,6 +2550,7 @@ object ViewPrincipal: TViewPrincipal
       Color = 5395026
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 469
       object pnlLicenciado: TPanel
         AlignWithMargins = True
         Left = 355
@@ -2576,6 +2579,8 @@ object ViewPrincipal: TViewPrincipal
           Color = 1031129
           ParentBackground = False
           TabOrder = 0
+          ExplicitLeft = -2
+          ExplicitTop = 13
         end
         object pnlConteudoLicenca: TPanel
           Left = 2
@@ -2627,10 +2632,11 @@ object ViewPrincipal: TViewPrincipal
       Left = 0
       Top = 0
       Width = 665
-      Height = 469
+      Height = 421
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitHeight = 469
     end
   end
 end

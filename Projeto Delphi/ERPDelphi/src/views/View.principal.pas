@@ -50,9 +50,12 @@ type
     procedure btnProdutosClick(Sender: TObject);
     procedure btnConfiguracoesClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure lblTituloEmpresaMouseEnter(Sender: TObject);
+    procedure lblTituloEmpresaMouseLeave(Sender: TObject);
   private
     procedure GET_LineMenu(Sender: TObject);
   public
+
   end;
 
 var
@@ -104,6 +107,16 @@ begin
   ShapeMenu.Height     := TSpeedButton(Sender).Height;
   ShapeMenu.Top        := TSpeedButton(Sender).Top;
   pnlShapeMenu.Repaint;
+end;
+
+procedure TViewPrincipal.lblTituloEmpresaMouseEnter(Sender: TObject);
+begin
+    lbltituloEmpresa.Font.Color :=   $000FBBD9;
+end;
+
+procedure TViewPrincipal.lblTituloEmpresaMouseLeave(Sender: TObject);
+begin
+    lbltituloEmpresa.Font.Color :=   clWhite;
 end;
 
 end.
