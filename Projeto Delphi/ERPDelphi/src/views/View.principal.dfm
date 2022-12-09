@@ -2142,17 +2142,13 @@ object ViewPrincipal: TViewPrincipal
     TabOrder = 0
     ExplicitTop = -6
     object btnFechar: TButton
-      Left = 800
-      Top = 0
-      Width = 75
-      Height = 70
-      Align = alRight
+      Left = 344
+      Top = 12
+      Width = 65
+      Height = 41
       Caption = 'Fechar'
       TabOrder = 0
       OnClick = btnFecharClick
-      ExplicitLeft = 368
-      ExplicitTop = 8
-      ExplicitHeight = 25
     end
     object pnlLogo: TPanel
       Left = 0
@@ -2275,6 +2271,107 @@ object ViewPrincipal: TViewPrincipal
         ParentFont = False
       end
     end
+    object pnlUsuario: TPanel
+      Left = 655
+      Top = 0
+      Width = 220
+      Height = 70
+      Align = alRight
+      BevelOuter = bvNone
+      TabOrder = 3
+      ExplicitTop = -6
+      object pnlLineUsuario: TPanel
+        AlignWithMargins = True
+        Left = 0
+        Top = 20
+        Width = 2
+        Height = 30
+        Margins.Left = 0
+        Margins.Top = 20
+        Margins.Right = 0
+        Margins.Bottom = 20
+        Align = alLeft
+        BevelOuter = bvNone
+        Color = 1031129
+        ParentBackground = False
+        TabOrder = 0
+        ExplicitTop = 0
+        ExplicitHeight = 70
+      end
+      object pnlImagemUsuario: TPanel
+        Left = 150
+        Top = 0
+        Width = 70
+        Height = 70
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 1
+        ExplicitLeft = 35
+        object imgUsuario: TImage
+          Left = 0
+          Top = 0
+          Width = 70
+          Height = 70
+          Align = alClient
+          Center = True
+          ExplicitLeft = -16
+          ExplicitTop = -16
+          ExplicitWidth = 105
+          ExplicitHeight = 105
+        end
+      end
+      object pnlDadosUsuarios: TPanel
+        Left = 2
+        Top = 0
+        Width = 148
+        Height = 70
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 2
+        ExplicitLeft = 5
+        ExplicitTop = -6
+        object lblUsuario: TLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 10
+          Width = 142
+          Height = 26
+          Margins.Top = 10
+          Margins.Bottom = 0
+          Align = alClient
+          Alignment = taRightJustify
+          Caption = 'Nome Usu'#225'rio'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -19
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = 27
+          ExplicitWidth = 118
+          ExplicitHeight = 25
+        end
+        object lblPerfil: TLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 39
+          Width = 142
+          Height = 21
+          Margins.Bottom = 10
+          Align = alBottom
+          Alignment = taRightJustify
+          Caption = 'Administrator'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Segoe UI Light'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = 55
+          ExplicitWidth = 90
+        end
+      end
+    end
   end
   object pnlMenu: TPanel
     Left = 0
@@ -2286,8 +2383,8 @@ object ViewPrincipal: TViewPrincipal
     Color = 5395026
     ParentBackground = False
     TabOrder = 1
+    ExplicitLeft = -6
     ExplicitTop = 73
-    ExplicitHeight = 507
   end
   object pnlBackPrincipal: TPanel
     Left = 210

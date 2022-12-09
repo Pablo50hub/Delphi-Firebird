@@ -22,6 +22,13 @@ type
     pnlVersao: TPanel;
     lblVersaoTitulo: TLabel;
     lblVersao: TLabel;
+    pnlUsuario: TPanel;
+    pnlLineUsuario: TPanel;
+    pnlImagemUsuario: TPanel;
+    imgUsuario: TImage;
+    pnlDadosUsuarios: TPanel;
+    lblUsuario: TLabel;
+    lblPerfil: TLabel;
     procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
