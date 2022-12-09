@@ -3,10 +3,24 @@ unit View.principal;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons,
-  Vcl.Imaging.pngimage, System.ImageList, Vcl.ImgList, System.Actions,
-  Vcl.ActnList;
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.StdCtrls,
+  Vcl.ExtCtrls,
+  Vcl.Buttons,
+  Vcl.Imaging.pngimage,
+  System.ImageList,
+  Vcl.ImgList,
+  System.Actions,
+  Vcl.ActnList,
+  Provider.constants;
 
 type
   TViewPrincipal = class(TForm)
@@ -104,6 +118,7 @@ end;
 procedure TViewPrincipal.FormShow(Sender: TObject);
 begin           //show
   GET_LineMenu(btnClientes);
+  lblLicenciado.Caption := sRAZAO_FILIAL;
 end;
 
 procedure TViewPrincipal.GET_LineMenu(Sender: TObject);

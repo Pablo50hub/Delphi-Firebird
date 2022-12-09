@@ -1,8 +1,8 @@
 object ServiceConexao: TServiceConexao
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 300
-  Width = 481
+  Height = 223
+  Width = 314
   object FDConn: TFDConnection
     Params.Strings = (
       
@@ -21,20 +21,20 @@ object ServiceConexao: TServiceConexao
     Top = 24
   end
   object FBDriverLink: TFDPhysFBDriverLink
-    Left = 208
-    Top = 64
+    Left = 160
+    Top = 72
   end
   object WaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 208
+    Left = 160
     Top = 24
   end
   object QRY_filial: TFDQuery
     Connection = FDConn
     SQL.Strings = (
       'select * from filial where fil_codigo = :codigo')
-    Left = 104
-    Top = 104
+    Left = 40
+    Top = 72
     ParamData = <
       item
         Name = 'CODIGO'
@@ -42,5 +42,31 @@ object ServiceConexao: TServiceConexao
         ParamType = ptInput
         Value = Null
       end>
+    object QRY_filialFIL_CODIGO: TIntegerField
+      FieldName = 'FIL_CODIGO'
+      Origin = 'FIL_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRY_filialFIL_RAZAO: TStringField
+      FieldName = 'FIL_RAZAO'
+      Origin = 'FIL_RAZAO'
+      Size = 100
+    end
+    object QRY_filialFIL_FANTASIA: TStringField
+      FieldName = 'FIL_FANTASIA'
+      Origin = 'FIL_FANTASIA'
+      Size = 100
+    end
+    object QRY_filialFIL_CNPJ: TStringField
+      FieldName = 'FIL_CNPJ'
+      Origin = 'FIL_CNPJ'
+      Size = 50
+    end
+    object QRY_filialFIL_TELEFONE: TStringField
+      FieldName = 'FIL_TELEFONE'
+      Origin = 'FIL_TELEFONE'
+      Size = 50
+    end
   end
 end

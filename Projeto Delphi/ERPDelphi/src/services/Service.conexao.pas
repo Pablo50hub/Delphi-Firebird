@@ -21,8 +21,13 @@ uses
   FireDAC.Comp.UI,
   FireDAC.Phys.IBBase,
   FireDAC.Phys.FB,
-  System.Inifiles, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, FireDAC.Comp.DataSet; //inserindo a biblioteca para ler o arquivo .ini
+  System.Inifiles, //inserindo a biblioteca para ler o arquivo .ini
+  FireDAC.Stan.Param,
+  FireDAC.DatS,
+  FireDAC.DApt.Intf,
+  FireDAC.DApt,
+  FireDAC.Comp.DataSet,
+  Provider.constants;
 
 type
   TServiceConexao = class(TDataModule)
@@ -30,6 +35,11 @@ type
     FBDriverLink: TFDPhysFBDriverLink;
     WaitCursor: TFDGUIxWaitCursor;
     QRY_filial: TFDQuery;
+    QRY_filialFIL_CODIGO: TIntegerField;
+    QRY_filialFIL_RAZAO: TStringField;
+    QRY_filialFIL_FANTASIA: TStringField;
+    QRY_filialFIL_CNPJ: TStringField;
+    QRY_filialFIL_TELEFONE: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -58,7 +68,7 @@ var  //criando as variaveis para receber os dados do arquivo .ini
 
 begin
   try
-
+    //buscando o arquivo .ini para importação de dados
     FDConn.Connected  := False;
 
     LCaminho := ExtractFileDir(ParamStr(0)) + '\Login.ini';  //buscando do arquivo .ini
@@ -89,6 +99,10 @@ begin
   QRY_Filial.Close;
   qry_filial.Params[0].AsInteger := 1;
   qry_filial.Open();
+
+
+  iCOD_FILIAL   := QRY_filialFIL_CODIGO.AsInteger;
+  sRAZAO_FILIAL := QRY_filialFIL_RAZAO.AsString;
 
 end;
 
