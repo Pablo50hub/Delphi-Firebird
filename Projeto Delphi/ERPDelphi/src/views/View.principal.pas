@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons,
+  Vcl.Imaging.pngimage;
 
 type
   TViewPrincipal = class(TForm)
@@ -24,7 +25,7 @@ type
     pnlUsuario: TPanel;
     pnlLineUsuario: TPanel;
     pnlImagemUsuario: TPanel;
-    imgUsuario: TImage;
+    imgUserBranca: TImage;
     pnlDadosUsuarios: TPanel;
     lblUsuario: TLabel;
     lblPerfil: TLabel;
@@ -43,6 +44,8 @@ type
     btnProdutos: TSpeedButton;
     btnConfiguracoes: TSpeedButton;
     btnSair: TSpeedButton;
+    imgUserLaranja: TImage;
+    imgBackground: TImage;
     procedure btnSairClick(Sender: TObject);
     procedure btnClientesClick(Sender: TObject);
     procedure btnCaixaClick(Sender: TObject);
@@ -52,6 +55,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure lblTituloEmpresaMouseEnter(Sender: TObject);
     procedure lblTituloEmpresaMouseLeave(Sender: TObject);
+    procedure imgUserBrancaMouseEnter(Sender: TObject);
+    procedure imgUserLaranjaMouseLeave(Sender: TObject);
   private
     procedure GET_LineMenu(Sender: TObject);
   public
@@ -107,6 +112,18 @@ begin
   ShapeMenu.Height     := TSpeedButton(Sender).Height;
   ShapeMenu.Top        := TSpeedButton(Sender).Top;
   pnlShapeMenu.Repaint;
+end;
+
+procedure TViewPrincipal.imgUserBrancaMouseEnter(Sender: TObject);
+begin
+    imgUserBranca.Visible := False;
+    imgUserLaranja.Visible := True;
+end;
+
+procedure TViewPrincipal.imgUserLaranjaMouseLeave(Sender: TObject);
+begin
+    imgUserBranca.Visible :=  True;
+    imgUserLaranja.Visible :=  False;
 end;
 
 procedure TViewPrincipal.lblTituloEmpresaMouseEnter(Sender: TObject);
