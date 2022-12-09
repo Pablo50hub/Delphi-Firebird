@@ -4,7 +4,7 @@ object ViewPrincipal: TViewPrincipal
   Align = alClient
   BorderStyle = bsNone
   Caption = 'ViewPrincipal'
-  ClientHeight = 532
+  ClientHeight = 477
   ClientWidth = 875
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -2141,6 +2141,8 @@ object ViewPrincipal: TViewPrincipal
     Color = 5395026
     ParentBackground = False
     TabOrder = 0
+    ExplicitLeft = -8
+    ExplicitTop = -3
     object pnlLogo: TPanel
       Left = 0
       Top = 0
@@ -2441,15 +2443,16 @@ object ViewPrincipal: TViewPrincipal
     Left = 0
     Top = 70
     Width = 210
-    Height = 462
+    Height = 407
     Align = alLeft
     BevelOuter = bvNone
     Color = 5395026
     ParentBackground = False
     TabOrder = 1
+    ExplicitHeight = 462
     object pnlSair: TPanel
       Left = 0
-      Top = 421
+      Top = 366
       Width = 210
       Height = 41
       Align = alBottom
@@ -2457,6 +2460,7 @@ object ViewPrincipal: TViewPrincipal
       Color = 4605510
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 421
       object btnSair: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -2483,10 +2487,11 @@ object ViewPrincipal: TViewPrincipal
       Left = 0
       Top = 0
       Width = 4
-      Height = 421
+      Height = 366
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitHeight = 421
       object ShapeMenu: TShape
         Left = 0
         Top = 0
@@ -2498,10 +2503,11 @@ object ViewPrincipal: TViewPrincipal
       Left = 4
       Top = 0
       Width = 206
-      Height = 421
+      Height = 366
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitHeight = 421
       object btnClientes: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -3443,13 +3449,14 @@ object ViewPrincipal: TViewPrincipal
     Left = 210
     Top = 70
     Width = 665
-    Height = 462
+    Height = 407
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
+    ExplicitHeight = 462
     object pnlRodape: TPanel
       Left = 0
-      Top = 421
+      Top = 366
       Width = 665
       Height = 41
       Align = alBottom
@@ -3457,6 +3464,7 @@ object ViewPrincipal: TViewPrincipal
       Color = 5395026
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 421
       object pnlLicenciado: TPanel
         AlignWithMargins = True
         Left = 355
@@ -3536,15 +3544,16 @@ object ViewPrincipal: TViewPrincipal
       Left = 0
       Top = 0
       Width = 665
-      Height = 421
+      Height = 366
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitHeight = 421
       object imgBackground: TImage
         Left = 0
         Top = 0
         Width = 665
-        Height = 421
+        Height = 366
         Align = alClient
         Center = True
         Picture.Data = {
@@ -5918,6 +5927,7 @@ object ViewPrincipal: TViewPrincipal
           00C044D7F9BD50230CADDD0000000049454E44AE426082}
         ExplicitLeft = 3
         ExplicitTop = -3
+        ExplicitHeight = 421
       end
     end
   end
