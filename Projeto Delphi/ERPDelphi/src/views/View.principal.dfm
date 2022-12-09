@@ -4,8 +4,8 @@ object ViewPrincipal: TViewPrincipal
   Align = alClient
   BorderStyle = bsNone
   Caption = 'ViewPrincipal'
-  ClientHeight = 546
-  ClientWidth = 805
+  ClientHeight = 580
+  ClientWidth = 875
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -2133,21 +2133,19 @@ object ViewPrincipal: TViewPrincipal
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 805
-    Height = 41
+    Width = 875
+    Height = 73
     Align = alTop
     BevelOuter = bvNone
-    Color = clLime
+    Color = 5395026
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 312
-    ExplicitTop = 256
-    ExplicitWidth = 185
+    ExplicitWidth = 805
     object btnFechar: TButton
-      Left = 730
+      Left = 800
       Top = 0
       Width = 75
-      Height = 41
+      Height = 73
       Align = alRight
       Caption = 'Fechar'
       TabOrder = 0
@@ -2155,6 +2153,67 @@ object ViewPrincipal: TViewPrincipal
       ExplicitLeft = 368
       ExplicitTop = 8
       ExplicitHeight = 25
+    end
+    object pnlLogo: TPanel
+      Left = 0
+      Top = 0
+      Width = 210
+      Height = 73
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = 4605510
+      ParentBackground = False
+      TabOrder = 1
+    end
+  end
+  object pnlMenu: TPanel
+    Left = 0
+    Top = 73
+    Width = 210
+    Height = 507
+    Align = alLeft
+    BevelOuter = bvNone
+    Color = 5395026
+    ParentBackground = False
+    TabOrder = 1
+  end
+  object pnlBackPrincipal: TPanel
+    Left = 210
+    Top = 73
+    Width = 665
+    Height = 507
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 2
+    ExplicitLeft = 191
+    ExplicitTop = 79
+    ExplicitWidth = 620
+    ExplicitHeight = 473
+    object pnlRodape: TPanel
+      Left = 0
+      Top = 458
+      Width = 665
+      Height = 49
+      Align = alBottom
+      BevelOuter = bvNone
+      Color = 5395026
+      ParentBackground = False
+      TabOrder = 0
+      ExplicitTop = 424
+      ExplicitWidth = 620
+    end
+    object pnlConteudo: TPanel
+      Left = 0
+      Top = 0
+      Width = 665
+      Height = 458
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 1
+      ExplicitLeft = 256
+      ExplicitTop = 233
+      ExplicitWidth = 185
+      ExplicitHeight = 41
     end
   end
 end

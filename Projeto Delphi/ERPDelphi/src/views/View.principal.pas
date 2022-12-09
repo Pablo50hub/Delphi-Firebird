@@ -10,6 +10,11 @@ type
   TViewPrincipal = class(TForm)
     pnlTopo: TPanel;
     btnFechar: TButton;
+    pnlMenu: TPanel;
+    pnlBackPrincipal: TPanel;
+    pnlRodape: TPanel;
+    pnlConteudo: TPanel;
+    pnlLogo: TPanel;
     procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
