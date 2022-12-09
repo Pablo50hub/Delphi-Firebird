@@ -19,7 +19,6 @@ inherited ViewBaseListas: TViewBaseListas
     ParentBackground = False
     TabOrder = 0
     OnMouseDown = pnlTopoMouseDown
-    ExplicitWidth = 980
     object lblTitulo: TLabel
       AlignWithMargins = True
       Left = 38
@@ -143,7 +142,148 @@ inherited ViewBaseListas: TViewBaseListas
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 0
-    ExplicitWidth = 930
+    object btnNovo: TSpeedButton
+      AlignWithMargins = True
+      Left = 276
+      Top = 3
+      Width = 92
+      Height = 29
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Down = True
+      Caption = '[ NOVO ]'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 680
+      ExplicitTop = 0
+      ExplicitHeight = 40
+    end
+    object btnEditar: TSpeedButton
+      AlignWithMargins = True
+      Left = 374
+      Top = 3
+      Width = 92
+      Height = 29
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = '[ EDITAR ]'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 680
+    end
+    object btnCancelar: TSpeedButton
+      AlignWithMargins = True
+      Left = 472
+      Top = 3
+      Width = 101
+      Height = 29
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = '[ CANCELAR ]'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object btnSalvar: TSpeedButton
+      AlignWithMargins = True
+      Left = 579
+      Top = 3
+      Width = 92
+      Height = 29
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = '[ SALVAR ]'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 691
+    end
+    object btnExcluir: TSpeedButton
+      AlignWithMargins = True
+      Left = 677
+      Top = 3
+      Width = 92
+      Height = 29
+      Cursor = crHandPoint
+      Align = alRight
+      GroupIndex = 1
+      Caption = '[ EXCLUIR ]'
+      Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 680
+    end
+  end
+  object pnlLinhaFundo: TPanel
+    Left = 0
+    Top = 35
+    Width = 772
+    Height = 360
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 7500402
+    ParentBackground = False
+    TabOrder = 2
+    object CardPanel_Lista: TCardPanel
+      AlignWithMargins = True
+      Left = 1
+      Top = 0
+      Width = 770
+      Height = 360
+      Margins.Left = 1
+      Margins.Top = 0
+      Margins.Right = 1
+      Margins.Bottom = 0
+      Align = alClient
+      ActiveCard = card_pesquisa
+      BevelOuter = bvNone
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 0
+      object card_pesquisa: TCard
+        Left = 0
+        Top = 0
+        Width = 770
+        Height = 360
+        Caption = 'card_pesquisa'
+        CardIndex = 0
+        TabOrder = 0
+      end
+      object card_cadastro: TCard
+        Left = 0
+        Top = 0
+        Width = 770
+        Height = 360
+        Caption = 'card_cadastro'
+        CardIndex = 1
+        TabOrder = 1
+      end
+    end
   end
 end

@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, View.base, Vcl.ExtCtrls,
-  Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls;
+  Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls, Vcl.WinXPanels;
 
 type
   TViewBaseListas = class(TViewBase)
@@ -16,6 +16,15 @@ type
     pnlFechar: TPanel;
     btnSair: TSpeedButton;
     lblTitulo: TLabel;
+    btnNovo: TSpeedButton;
+    btnEditar: TSpeedButton;
+    btnCancelar: TSpeedButton;
+    btnSalvar: TSpeedButton;
+    btnExcluir: TSpeedButton;
+    pnlLinhaFundo: TPanel;
+    CardPanel_Lista: TCardPanel;
+    card_pesquisa: TCard;
+    card_cadastro: TCard;
     procedure btnSairClick(Sender: TObject);
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -38,10 +47,9 @@ begin
   Self.Close;
 end;
 
-procedure TViewBaseListas.pnlTopoMouseDown(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TViewBaseListas.pnlTopoMouseDown(Sender: TObject;Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 const
-    sc_DragMove = %f012;
+    sc_DragMove = $f012;
 begin
   inherited; //criar a herança
   ReleaseCapture;
