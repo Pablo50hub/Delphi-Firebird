@@ -21,13 +21,15 @@ uses
   FireDAC.Comp.UI,
   FireDAC.Phys.IBBase,
   FireDAC.Phys.FB,
-  System.Inifiles;
+  System.Inifiles, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet; //inserindo a biblioteca para ler o arquivo .ini
 
 type
   TServiceConexao = class(TDataModule)
     FDConn: TFDConnection;
     FBDriverLink: TFDPhysFBDriverLink;
     WaitCursor: TFDGUIxWaitCursor;
+    QRY_filial: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -45,7 +47,7 @@ implementation
 {$R *.dfm}
 
 procedure TServiceConexao.DataModuleCreate(Sender: TObject);
-var
+var  //criando as variaveis para receber os dados do arquivo .ini
   LIniFile : TIniFile;
   LDatabase : string;
   LUser_Name : string;
@@ -59,30 +61,34 @@ begin
 
     FDConn.Connected  := False;
 
-    LCaminho := ExtractFileDir(ParamStr(0)) + '\Login.ini';
+    LCaminho := ExtractFileDir(ParamStr(0)) + '\Login.ini';  //buscando do arquivo .ini
     //FDPhysFBDriverLink.VendorHome := ExtractFileDir(ParamStr(0)) + '\dlls';
 
-    LIniFile  := TIniFile.Create(LCaminho);
+    LIniFile  := TIniFile.Create(LCaminho);   //cria o caminho do arquivo
 
-    LDatabase := LIniFile.ReadString('Conexao','Database', LDatabase);
-    LServidor := LIniFile.ReadString('Conexao','Servidor', LServidor);
-    LPorta    := LIniFile.ReadInteger('Conexao','Porta', LPorta);
+    LDatabase := LIniFile.ReadString('Conexao','Database', LDatabase);   //le os dados dentro do arquivo
+    LServidor := LIniFile.ReadString('Conexao','Servidor', LServidor);   //le os dados dentro do arquivo
+    LPorta    := LIniFile.ReadInteger('Conexao','Porta', LPorta);        //le os dados dentro do arquivo
 
-    LUser_Name := 'SYSDBA';
-    LPassword  := 'masterkey';
+    LUser_Name := 'SYSDBA';     //insere o usuario manual
+    LPassword  := 'masterkey';  //insere a senha manual
 
-    FDConn.Params.Values['Database']  := LDatabase;
-    FDConn.Params.Values['User_Name']  := LUser_Name;
-    FDConn.Params.Values['Password']  := LPassword;
-    FDConn.Params.Values['Server']  := LServidor;
-    FDConn.Params.Values['Porta']  := LPorta.ToString;
+    FDConn.Params.Values['Database']  := LDatabase;    //passa os dados lidos
+    FDConn.Params.Values['User_Name']  := LUser_Name;  //passa os dados lidos
+    FDConn.Params.Values['Password']  := LPassword;    //passa os dados lidos
+    FDConn.Params.Values['Server']  := LServidor;      //passa os dados lidos
+    FDConn.Params.Values['Porta']  := LPorta.ToString; //passa os dados lidos
 
     //FDConn.Connected := True;
 
   finally
-       FreeAndNil(LIniFile);
+       FreeAndNil(LIniFile);      //para limpara a memoria do computador
   end;
 
+  //carrego minha filial
+  QRY_Filial.Close;
+  qry_filial.Params[0].AsInteger := 1;
+  qry_filial.Open();
 
 end;
 

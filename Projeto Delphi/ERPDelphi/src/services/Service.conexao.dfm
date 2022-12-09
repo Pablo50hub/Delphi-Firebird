@@ -1,8 +1,8 @@
 object ServiceConexao: TServiceConexao
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 411
-  Width = 762
+  Height = 300
+  Width = 481
   object FDConn: TFDConnection
     Params.Strings = (
       
@@ -15,17 +15,32 @@ object ServiceConexao: TServiceConexao
       'Port=3050'
       'CharacterSet=win1252'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Left = 40
     Top = 24
   end
   object FBDriverLink: TFDPhysFBDriverLink
-    Left = 560
-    Top = 88
+    Left = 208
+    Top = 64
   end
   object WaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 560
-    Top = 48
+    Left = 208
+    Top = 24
+  end
+  object QRY_filial: TFDQuery
+    Connection = FDConn
+    SQL.Strings = (
+      'select * from filial where fil_codigo = :codigo')
+    Left = 104
+    Top = 104
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
   end
 end
