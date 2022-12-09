@@ -4,6 +4,7 @@ inherited ViewBaseListas: TViewBaseListas
   ClientHeight = 430
   ClientWidth = 772
   Position = poMainFormCenter
+  OnShow = FormShow
   ExplicitWidth = 772
   ExplicitHeight = 430
   PixelsPerInch = 96
@@ -273,7 +274,70 @@ inherited ViewBaseListas: TViewBaseListas
         Height = 360
         Caption = 'card_pesquisa'
         CardIndex = 0
-        TabOrder = 0
+        TabOrder = 1
+        object pnlTituloPesquisa: TPanel
+          Left = 0
+          Top = 0
+          Width = 770
+          Height = 100
+          Align = alTop
+          BevelOuter = bvNone
+          Color = 15329769
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = -1
+          ExplicitTop = 3
+          object lblTituloPesquisa: TLabel
+            Left = 5
+            Top = 6
+            Width = 80
+            Height = 30
+            Caption = 'Pesquisa'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 8816262
+            Font.Height = -21
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
+            ParentFont = False
+          end
+          object edtPesquisa: TSearchBox
+            Left = 5
+            Top = 42
+            Width = 760
+            Height = 29
+            BevelInner = bvNone
+            BevelOuter = bvNone
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI Semilight'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TextHint = 'Digite aqui sua pesquisa!'
+          end
+        end
+        object DBG_dados: TDBGrid
+          AlignWithMargins = True
+          Left = 5
+          Top = 105
+          Width = 760
+          Height = 250
+          Margins.Left = 5
+          Margins.Top = 5
+          Margins.Right = 5
+          Margins.Bottom = 5
+          Align = alClient
+          BorderStyle = bsNone
+          DataSource = dsDados
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          TabOrder = 1
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+        end
       end
       object card_cadastro: TCard
         Left = 0
@@ -282,8 +346,12 @@ inherited ViewBaseListas: TViewBaseListas
         Height = 360
         Caption = 'card_cadastro'
         CardIndex = 1
-        TabOrder = 1
+        TabOrder = 0
       end
     end
+  end
+  object dsDados: TDataSource
+    Left = 697
+    Top = 147
   end
 end
