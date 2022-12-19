@@ -15,8 +15,14 @@ inherited ViewClientes: TViewClientes
     inherited btnEditar: TSpeedButton
       OnClick = btnEditarClick
     end
+    inherited btnCancelar: TSpeedButton
+      OnClick = btnCancelarClick
+    end
     inherited btnSalvar: TSpeedButton
       OnClick = btnSalvarClick
+    end
+    inherited btnExcluir: TSpeedButton
+      OnClick = btnExcluirClick
     end
   end
   inherited pnlLinhaFundo: TPanel
@@ -59,63 +65,104 @@ inherited ViewClientes: TViewClientes
         end
       end
       inherited card_cadastro: TCard
-        ExplicitLeft = -16
-        ExplicitTop = -16
+        ExplicitTop = 3
         object lbl1: TLabel
           Left = 48
           Top = 112
-          Width = 65
-          Height = 13
-          Caption = 'PES_CODIGO'
+          Width = 54
+          Height = 21
+          Caption = 'C'#243'digo'
           FocusControl = edtPES_CODIGO
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object lbl2: TLabel
           Left = 314
           Top = 112
-          Width = 59
-          Height = 13
-          Caption = 'PES_RAZAO'
+          Width = 124
+          Height = 21
+          Caption = 'Nome do Cliente'
           FocusControl = edtPES_RAZAO
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object lbl3: TLabel
           Left = 663
           Top = 112
-          Width = 74
-          Height = 13
-          Caption = 'PES_FANTASIA'
+          Width = 106
+          Height = 21
+          Caption = 'Nome Fantasia'
           FocusControl = edtPES_FANTASIA
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object lbl4: TLabel
           Left = 314
-          Top = 168
-          Width = 74
-          Height = 13
-          Caption = 'PES_TELEFONE'
+          Top = 176
+          Width = 63
+          Height = 21
+          Caption = 'Telefone'
           FocusControl = edtPES_TELEFONE
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object lbl5: TLabel
           Left = 119
           Top = 112
-          Width = 68
-          Height = 13
-          Caption = 'PES_CNPJCPF'
+          Width = 78
+          Height = 21
+          Caption = 'CNPJ / CPF'
           FocusControl = edtPES_CNPJCPF
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object lbl6: TLabel
           Left = 48
-          Top = 168
-          Width = 48
-          Height = 13
-          Caption = 'PES_IERG'
+          Top = 173
+          Width = 34
+          Height = 21
+          Caption = 'IERG'
           FocusControl = edtPES_IERG
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object lbl7: TLabel
           Left = 48
-          Top = 233
-          Width = 92
-          Height = 13
-          Caption = 'PES_OBSERVACAO'
+          Top = 249
+          Width = 87
+          Height = 42
+          Caption = 'Observa'#231#227'o'#13#10
           FocusControl = edtPES_OBSERVACAO
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object pnlTituloCadCliente: TPanel
           Left = 0
@@ -143,63 +190,70 @@ inherited ViewClientes: TViewClientes
         end
         object edtPES_CODIGO: TDBEdit
           Left = 48
-          Top = 128
+          Top = 139
           Width = 65
           Height = 21
           DataField = 'PES_CODIGO'
           DataSource = dsDados
+          ReadOnly = True
           TabOrder = 1
         end
         object edtPES_RAZAO: TDBEdit
           Left = 314
-          Top = 131
+          Top = 139
           Width = 343
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PES_RAZAO'
           DataSource = dsDados
           TabOrder = 2
         end
         object edtPES_FANTASIA: TDBEdit
           Left = 663
-          Top = 128
+          Top = 139
           Width = 350
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PES_FANTASIA'
           DataSource = dsDados
           TabOrder = 3
         end
         object edtPES_TELEFONE: TDBEdit
           Left = 314
-          Top = 184
+          Top = 200
           Width = 255
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PES_TELEFONE'
           DataSource = dsDados
           TabOrder = 4
         end
         object edtPES_CNPJCPF: TDBEdit
           Left = 119
-          Top = 128
+          Top = 139
           Width = 189
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PES_CNPJCPF'
           DataSource = dsDados
           TabOrder = 5
         end
         object edtPES_IERG: TDBEdit
           Left = 48
-          Top = 184
+          Top = 200
           Width = 260
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PES_IERG'
           DataSource = dsDados
           TabOrder = 6
         end
         object edtPES_OBSERVACAO: TDBEdit
           Left = 48
-          Top = 249
+          Top = 273
           Width = 965
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PES_OBSERVACAO'
           DataSource = dsDados
           TabOrder = 7

@@ -46,6 +46,8 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,24 +63,53 @@ implementation
 
 { TViewClientes }
 
+procedure TViewClientes.btnCancelarClick(Sender: TObject);
+begin   //cancelar
+  inherited;
+  if ServiceCadastro.QRY_pessoas.State in dsEditModes then
+  begin
+    ServiceCadastro.QRY_pessoas.Cancel;
+    CardPanel_Lista.ActiveCard := card_pesquisa;
+  end;
+end;
+
 procedure TViewClientes.btnEditarClick(Sender: TObject);
 begin  //editar
   inherited;
   CardPanel_Lista.ActiveCard := card_cadastro;
+  edtPES_CNPJCPF.SetFocus;
+  ServiceCadastro.QRY_pessoas.Edit;
+end;
+
+procedure TViewClientes.btnExcluirClick(Sender: TObject);
+begin    //excluir
+  inherited;
+  if ServiceCadastro.QRY_pessoas.RecordCount > 0 then
+  begin
+    ServiceCadastro.QRY_pessoas.Delete;
+    ShowMessage('Cliente deletado com sucesso.');
+    CardPanel_Lista.ActiveCard := card_pesquisa;
+  end
 end;
 
 procedure TViewClientes.btnNovoClick(Sender: TObject);
 begin  //novo
   inherited;
   CardPanel_Lista.ActiveCard := card_cadastro;
+  edtPES_CNPJCPF.SetFocus;
+  ServiceCadastro.QRY_pessoas.Insert;
 end;
 
 procedure TViewClientes.btnSalvarClick(Sender: TObject);
 begin   //salvar
   inherited;
-  ServiceCadastro.QRY_pessoas.Edit;
-  ServiceCadastro.QRY_pessoas.Post;
-  CardPanel_Lista.ActiveCard := card_pesquisa;
+  if ServiceCadastro.QRY_pessoas.State in dsEditModes then
+  begin
+    ServiceCadastro.QRY_pessoasPES_TIPOPESSOA.AsInteger := 1;
+    ServiceCadastro.QRY_pessoas.Post;
+    ShowMessage('Cliente Salvo com sucesso.');
+    CardPanel_Lista.ActiveCard := card_pesquisa;
+  end;
 end;
 
 procedure TViewClientes.FormShow(Sender: TObject);
@@ -92,6 +123,7 @@ begin
      ServiceCadastro.QRY_pessoas.Close;
      ServiceCadastro.QRY_pessoas.SQL.Clear;
      ServiceCadastro.QRY_pessoas.SQL.Add('select *from pessoas where pes_tipopessoa = :tipopessoa');
+     ServiceCadastro.QRY_pessoas.SQL.Add('order by pes_codigo desc');
      ServiceCadastro.QRY_pessoas.Params[0].AsInteger := iTIPO;
      ServiceCadastro.QRY_pessoas.Open();
 end;
