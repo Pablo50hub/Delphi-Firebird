@@ -22,11 +22,30 @@ uses
   Vcl.Buttons,
   Vcl.Imaging.pngimage,
   Vcl.ExtCtrls,
-  Service.cadastro;
+  Service.cadastro, Vcl.Mask, Vcl.DBCtrls;
 
 type
   TViewClientes = class(TViewBaseListas)
+    pnlTituloCadCliente: TPanel;
+    lblTituloCadastrato: TLabel;
+    lbl1: TLabel;
+    edtPES_CODIGO: TDBEdit;
+    lbl2: TLabel;
+    edtPES_RAZAO: TDBEdit;
+    lbl3: TLabel;
+    edtPES_FANTASIA: TDBEdit;
+    lbl4: TLabel;
+    edtPES_TELEFONE: TDBEdit;
+    lbl5: TLabel;
+    edtPES_CNPJCPF: TDBEdit;
+    lbl6: TLabel;
+    edtPES_IERG: TDBEdit;
+    lbl7: TLabel;
+    edtPES_OBSERVACAO: TDBEdit;
     procedure FormShow(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,6 +60,26 @@ implementation
 {$R *.dfm}
 
 { TViewClientes }
+
+procedure TViewClientes.btnEditarClick(Sender: TObject);
+begin  //editar
+  inherited;
+  CardPanel_Lista.ActiveCard := card_cadastro;
+end;
+
+procedure TViewClientes.btnNovoClick(Sender: TObject);
+begin  //novo
+  inherited;
+  CardPanel_Lista.ActiveCard := card_cadastro;
+end;
+
+procedure TViewClientes.btnSalvarClick(Sender: TObject);
+begin   //salvar
+  inherited;
+  ServiceCadastro.QRY_pessoas.Edit;
+  ServiceCadastro.QRY_pessoas.Post;
+  CardPanel_Lista.ActiveCard := card_pesquisa;
+end;
 
 procedure TViewClientes.FormShow(Sender: TObject);
 begin  //show
