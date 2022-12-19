@@ -4,8 +4,8 @@ object ViewPrincipal: TViewPrincipal
   Align = alClient
   BorderStyle = bsNone
   Caption = 'ViewPrincipal'
-  ClientHeight = 477
-  ClientWidth = 875
+  ClientHeight = 781
+  ClientWidth = 1284
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -2134,13 +2134,14 @@ object ViewPrincipal: TViewPrincipal
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 875
+    Width = 1284
     Height = 70
     Align = alTop
     BevelOuter = bvNone
     Color = 5395026
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 875
     object pnlLogo: TPanel
       Left = 0
       Top = 0
@@ -2255,13 +2256,14 @@ object ViewPrincipal: TViewPrincipal
       end
     end
     object pnlUsuario: TPanel
-      Left = 655
+      Left = 1064
       Top = 0
       Width = 220
       Height = 70
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitLeft = 655
       object pnlLineUsuario: TPanel
         AlignWithMargins = True
         Left = 0
@@ -2441,15 +2443,16 @@ object ViewPrincipal: TViewPrincipal
     Left = 0
     Top = 70
     Width = 210
-    Height = 407
+    Height = 711
     Align = alLeft
     BevelOuter = bvNone
     Color = 5395026
     ParentBackground = False
     TabOrder = 1
+    ExplicitHeight = 407
     object pnlSair: TPanel
       Left = 0
-      Top = 366
+      Top = 670
       Width = 210
       Height = 41
       Align = alBottom
@@ -2457,6 +2460,7 @@ object ViewPrincipal: TViewPrincipal
       Color = 4605510
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 366
       object btnSair: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -2483,10 +2487,11 @@ object ViewPrincipal: TViewPrincipal
       Left = 0
       Top = 0
       Width = 4
-      Height = 366
+      Height = 670
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitHeight = 366
       object ShapeMenu: TShape
         Left = 0
         Top = 0
@@ -2498,10 +2503,11 @@ object ViewPrincipal: TViewPrincipal
       Left = 4
       Top = 0
       Width = 206
-      Height = 366
+      Height = 670
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitHeight = 366
       object btnClientes: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -3442,24 +3448,28 @@ object ViewPrincipal: TViewPrincipal
   object pnlBackPrincipal: TPanel
     Left = 210
     Top = 70
-    Width = 665
-    Height = 407
+    Width = 1074
+    Height = 711
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
+    ExplicitWidth = 665
+    ExplicitHeight = 407
     object pnlRodape: TPanel
       Left = 0
-      Top = 366
-      Width = 665
+      Top = 670
+      Width = 1074
       Height = 41
       Align = alBottom
       BevelOuter = bvNone
       Color = 5395026
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 366
+      ExplicitWidth = 665
       object pnlLicenciado: TPanel
         AlignWithMargins = True
-        Left = 355
+        Left = 764
         Top = 0
         Width = 300
         Height = 41
@@ -3470,6 +3480,7 @@ object ViewPrincipal: TViewPrincipal
         Align = alRight
         BevelOuter = bvNone
         TabOrder = 0
+        ExplicitLeft = 355
         object pnlLineRodape: TPanel
           AlignWithMargins = True
           Left = 0
@@ -3535,16 +3546,18 @@ object ViewPrincipal: TViewPrincipal
     object pnlConteudo: TPanel
       Left = 0
       Top = 0
-      Width = 665
-      Height = 366
+      Width = 1074
+      Height = 670
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 665
+      ExplicitHeight = 366
       object imgBackground: TImage
         Left = 0
         Top = 0
-        Width = 665
-        Height = 366
+        Width = 1074
+        Height = 670
         Align = alClient
         Center = True
         Picture.Data = {
@@ -5918,6 +5931,7 @@ object ViewPrincipal: TViewPrincipal
           00C044D7F9BD50230CADDD0000000049454E44AE426082}
         ExplicitLeft = 3
         ExplicitTop = -3
+        ExplicitWidth = 665
         ExplicitHeight = 421
       end
     end

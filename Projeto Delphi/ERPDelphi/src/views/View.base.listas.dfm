@@ -262,7 +262,7 @@ inherited ViewBaseListas: TViewBaseListas
       Margins.Right = 1
       Margins.Bottom = 0
       Align = alClient
-      ActiveCard = card_pesquisa
+      ActiveCard = card_cadastro
       BevelOuter = bvNone
       Color = clWhite
       ParentBackground = False
@@ -285,8 +285,6 @@ inherited ViewBaseListas: TViewBaseListas
           Color = 15329769
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = -1
-          ExplicitTop = 3
           object lblTituloPesquisa: TLabel
             Left = 5
             Top = 6

@@ -5,9 +5,6 @@ object ServiceConexao: TServiceConexao
   Width = 314
   object FDConn: TFDConnection
     Params.Strings = (
-      
-        'Database=C:\Users\Pablo\Desktop\Projeto Delphi\Data_Base\DB_SIST' +
-        'EMA(2.5)\DADOS.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'
@@ -15,7 +12,6 @@ object ServiceConexao: TServiceConexao
       'Port=3050'
       'CharacterSet=win1252'
       'DriverID=FB')
-    Connected = True
     LoginPrompt = False
     Left = 40
     Top = 24
