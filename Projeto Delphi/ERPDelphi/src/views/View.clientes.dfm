@@ -4,6 +4,7 @@ inherited ViewClientes: TViewClientes
   TextHeight = 13
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 68
       Caption = 'Clientes'
       ExplicitWidth = 68
     end
@@ -65,7 +66,6 @@ inherited ViewClientes: TViewClientes
         end
       end
       inherited card_cadastro: TCard
-        ExplicitTop = 3
         object lbl1: TLabel
           Left = 48
           Top = 112

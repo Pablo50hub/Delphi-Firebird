@@ -20,7 +20,7 @@ uses
   Vcl.ImgList,
   System.Actions,
   Vcl.ActnList,
-  Provider.constants, View.clientes;
+  Provider.constants, View.clientes, View.fornecedores;
 
 type
   TViewPrincipal = class(TForm)
@@ -91,7 +91,7 @@ begin         //caixa
 end;
 
 procedure TViewPrincipal.btnClientesClick(Sender: TObject);
-begin           //clientes
+begin //clientes
   GET_LineMenu(Sender);
   ViewClientes := TViewClientes.Create(Self);
   try
@@ -111,6 +111,16 @@ end;
 procedure TViewPrincipal.btnFornecedoresClick(Sender: TObject);
 begin                  //fornecedores
   GET_LineMenu(Sender);
+
+  ViewFornecedores := TViewFornecedores.Create(Self);
+  try
+
+     ViewFornecedores.ShowModal;
+
+  finally
+    FreeAndNil(ViewFornecedores);
+  end;
+
 end;
 
 procedure TViewPrincipal.btnProdutosClick(Sender: TObject);

@@ -22,7 +22,10 @@ uses
   Vcl.Buttons,
   Vcl.Imaging.pngimage,
   Vcl.ExtCtrls,
-  Service.cadastro, Vcl.Mask, Vcl.DBCtrls;
+  Service.cadastro,
+  Vcl.Mask,
+  Vcl.DBCtrls,
+  Provider.constants;
 
 type
   TViewClientes = class(TViewBaseListas)
@@ -51,7 +54,6 @@ type
   private
     { Private declarations }
   public
-      procedure GET_Pessoas(iTIPO: integer);
   end;
 
 var
@@ -117,15 +119,4 @@ begin  //show
   inherited;
   GET_Pessoas(1);
 end;
-
-procedure TViewClientes.GET_Pessoas(iTIPO: integer);
-begin
-     ServiceCadastro.QRY_pessoas.Close;
-     ServiceCadastro.QRY_pessoas.SQL.Clear;
-     ServiceCadastro.QRY_pessoas.SQL.Add('select *from pessoas where pes_tipopessoa = :tipopessoa');
-     ServiceCadastro.QRY_pessoas.SQL.Add('order by pes_codigo desc');
-     ServiceCadastro.QRY_pessoas.Params[0].AsInteger := iTIPO;
-     ServiceCadastro.QRY_pessoas.Open();
-end;
-
 end.
