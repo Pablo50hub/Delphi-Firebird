@@ -84,7 +84,7 @@ begin  //editar
 end;
 
 procedure TViewClientes.btnExcluirClick(Sender: TObject);
-begin    //excluir
+begin   //excluir
   inherited;
   if ServiceCadastro.QRY_pessoas.RecordCount > 0 then
   begin
