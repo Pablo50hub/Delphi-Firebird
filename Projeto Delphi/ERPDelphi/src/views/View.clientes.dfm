@@ -3,20 +3,12 @@ inherited ViewClientes: TViewClientes
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlTopo: TPanel
-    ExplicitWidth = 1024
     inherited lblTitulo: TLabel
-      Width = 891
-      Height = 29
       Caption = 'Clientes'
       ExplicitWidth = 68
     end
-    inherited pnlFechar: TPanel
-      ExplicitLeft = 932
-    end
   end
   inherited pnlRodape: TPanel
-    ExplicitTop = 515
-    ExplicitWidth = 1024
     inherited btnNovo: TSpeedButton
       OnClick = btnNovoClick
     end
@@ -34,17 +26,8 @@ inherited ViewClientes: TViewClientes
     end
   end
   inherited pnlLinhaFundo: TPanel
-    ExplicitWidth = 1024
-    ExplicitHeight = 480
     inherited CardPanel_Lista: TCardPanel
-      ExplicitWidth = 1022
-      ExplicitHeight = 480
       inherited card_pesquisa: TCard
-        ExplicitWidth = 1022
-        ExplicitHeight = 480
-        inherited pnlTituloPesquisa: TPanel
-          ExplicitWidth = 1022
-        end
         inherited DBG_dados: TDBGrid
           Columns = <
             item
@@ -77,8 +60,6 @@ inherited ViewClientes: TViewClientes
         end
       end
       inherited card_cadastro: TCard
-        ExplicitWidth = 1022
-        ExplicitHeight = 480
         object lbl1: TLabel
           Left = 48
           Top = 112

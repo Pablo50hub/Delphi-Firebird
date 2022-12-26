@@ -3,48 +3,19 @@ inherited ViewFornecedores: TViewFornecedores
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlTopo: TPanel
-    ExplicitWidth = 1024
     inherited lblTitulo: TLabel
-      Width = 891
-      Height = 29
       Caption = 'Fornecedores'
       ExplicitWidth = 115
     end
-    inherited pnlFechar: TPanel
-      ExplicitLeft = 932
-    end
   end
   inherited pnlRodape: TPanel
-    ExplicitTop = 515
-    ExplicitWidth = 1024
-    inherited btnNovo: TSpeedButton
-      OnClick = btnNovoClick
-    end
-    inherited btnEditar: TSpeedButton
-      OnClick = btnEditarClick
-    end
-    inherited btnCancelar: TSpeedButton
-      OnClick = btnCancelarClick
-    end
-    inherited btnSalvar: TSpeedButton
-      OnClick = btnSalvarClick
-    end
     inherited btnExcluir: TSpeedButton
       OnClick = btnExcluirClick
     end
   end
   inherited pnlLinhaFundo: TPanel
-    ExplicitWidth = 1024
-    ExplicitHeight = 480
     inherited CardPanel_Lista: TCardPanel
-      ExplicitWidth = 1022
-      ExplicitHeight = 480
       inherited card_pesquisa: TCard
-        ExplicitWidth = 1022
-        ExplicitHeight = 480
-        inherited pnlTituloPesquisa: TPanel
-          ExplicitWidth = 1022
-        end
         inherited DBG_dados: TDBGrid
           Columns = <
             item
@@ -70,14 +41,11 @@ inherited ViewFornecedores: TViewFornecedores
               Expanded = False
               FieldName = 'PES_CNPJCPF'
               Title.Caption = 'CNPJ / CPF'
-              Width = 64
               Visible = True
             end>
         end
       end
       inherited card_cadastro: TCard
-        ExplicitWidth = 1022
-        ExplicitHeight = 480
         object lbl1: TLabel
           Left = 48
           Top = 112
@@ -186,7 +154,6 @@ inherited ViewFornecedores: TViewFornecedores
           Color = 15329769
           ParentBackground = False
           TabOrder = 0
-          ExplicitTop = 8
           object lblTituloCadastrato: TLabel
             Left = 37
             Top = 14
